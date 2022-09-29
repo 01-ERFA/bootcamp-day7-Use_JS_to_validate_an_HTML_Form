@@ -1,29 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Create a HTML5 form - with bootstrap</title>
+
+    <!-- bootstrap styles and icons -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- fontawesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- local styles -->
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <!-- Form -->
+    <div
+      id="mybox"
+      class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11"
+    >
+      <br />
+      <div class="card text-center my_color_bg">
+        <!-- title - titulo del formulario -->
+        <div class="card-header">
+          <p class="myfloat_left" id="mytitle">Payment form example</p>
+        </div>
+
+        <!-- alert-danger -->
+        <div id="myalert" class="alert alert-danger" role="alert">
+          <p class="myfloat_left">Some fields are missing</p>
+        </div>
+
+        <!-- body -->
+
+        <div class="container text-center my_padding_top_title">
+          <form id="my_form">
+            <!-- tarjeta numeros -->
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_card" class="form-label mylabelleft"
+                    >Card #</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control my_P_error"
+                    id="input_card"
+                    placeholder="XXXXXXXXXXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_cvc" class="form-label mylabelleft"
+                    >CVC #</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control my_P_error"
+                    id="input_cvc"
+                    placeholder="0000"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <label class="form-label mylabelleft">Amount</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="inputGroup-sizing-default"
+                    >$</span
+                  >
+                  <input
+                    type="number"
+                    class="form-control my_P_error"
+                    id="input_amount"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    placeholder="Amount"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- nombres -->
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_firstName" class="form-label mylabelleft"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control my_P_error"
+                    id="input_firstName"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_lastName" class="form-label mylabelleft"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control my_P_error"
+                    id="input_lastName"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- ciudad -->
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_city" class="form-label mylabelleft"
+                    >City</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control my_P_error"
+                    id="input_city"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <label class="form-label mylabelleft">State</label>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="input_state"
+                    >Options</label
+                  >
+                  <select class="form-select my_P_error" id="input_state">
+                    <option selected>Pick a state</option>
+                    <option value="1">Uruguay</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="input_postalCode" class="form-label mylabelleft"
+                    >Postal code</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control my_P_error"
+                    id="input_postalCode"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- seleccionar tarjeta y mensaje -->
+            <div class="row">
+              <div class="col myleft_left">
+                <div>
+                  <label class="form-label mylabelleft">We accept</label>
+                </div>
+
+                <div id="radio_options" class="myoptions">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      ><i class="mastercard-icon"></i
+                    ></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      ><i class="fa fa-cc-visa"></i
+                    ></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio3"
+                      value="option3"
+                    />
+                    <label class="form-check-label" for="inlineRadio3"
+                      ><i class="fa fa-cc-diners-club"></i
+                    ></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio4"
+                      value="option4"
+                    />
+                    <label class="form-check-label" for="inlineRadio4"
+                      ><i class="fa fa-cc-amex"></i
+                    ></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-floating">
+                  <div>
+                    <label class="form-label mylabelleft">Message</label>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="input_message"
+                    style="height: 100px"
+                  ></textarea>
+                  <p class="mylabelleft">Add any notes here</p>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- botones -->
+            <div class="mybutton">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+
+        <hr />
       </div>
     </div>
+    <!-- bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
